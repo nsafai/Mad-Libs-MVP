@@ -1,4 +1,5 @@
 import random
+
 line = "\n_______________________________________________________________________________________________\n"
 instructionsNeeded = True
 userWantsNewStory = True
@@ -10,10 +11,8 @@ listOfTechnologies = list()
 listOfTechniques = list()
 
 arrayOflists = [listOfThings, listOfCompanies, listOfAdjectives, listOfTechnologies, listOfTechniques]
-
-listIndex = 0
-
 numberOfLists = len(arrayOflists)
+listIndex = 0
 
 def create(item):
     activeList.append(item)
@@ -29,9 +28,6 @@ def user_input(prompt):
 running = True
 while running:
     activeList = arrayOflists[listIndex]
-
-
-
 
     if (len(activeList)!=0) and (activeList[-1] == "done"):
         # go to next list
@@ -59,7 +55,6 @@ while running:
                     userWantsNewStory = True
 
     # (1) take input from user
-
     elif activeList == listOfThings:
         if instructionsNeeded == True:
             user_input(line + "Name a THING and press enter. Then name another. When you're done naming things, type 'done'" + line)
@@ -98,21 +93,3 @@ while running:
     else:
         # catch all
         print("unexpected edge case")
-
-
-# (4) Test user input
-#
-#
-# ## Code requirements
-#
-# Variable assignment
-# Function definitions
-# Core data types: strings, integers, floats
-# Collection types: lists, tuples, dictionary
-#
-# ## Stretch Goals
-# Randomize the words of the same type (ie shuffle the 5 nouns)).
-# Use a dictionary to generate the words.
-# Use a differnet data structure to store words.
-# Build with TDD
-# Use the system module (for accessing command-line arguments)
