@@ -9,11 +9,11 @@ listOfAdjectives = list()
 listOfTechnologies = list()
 listOfTechniques = list()
 
-lists = [listOfThings, listOfCompanies, listOfAdjectives, listOfTechnologies, listOfTechniques]
+arrayOflists = [listOfThings, listOfCompanies, listOfAdjectives, listOfTechnologies, listOfTechniques]
 
 listIndex = 0
 
-numberOfLists = len(lists)
+numberOfLists = len(arrayOflists)
 
 def create(item):
     activeList.append(item)
@@ -22,12 +22,13 @@ def create(item):
 def user_input(prompt):
     # the input function will display a message in the terminal
     # and wait for user input.
-    user_input = input(prompt)
+
+    user_input = str(input(prompt))
     create(user_input)
 
 running = True
 while running:
-    activeList = lists[listIndex]
+    activeList = arrayOflists[listIndex]
 
 
 
@@ -41,7 +42,7 @@ while running:
         # user is done with lists, show story
         else:
             if userWantsNewStory == True:
-                print("\n\n\n")
+                print("\n\nYour inspiration:\n")
                 print("Build a %s" % listOfThings[random.randrange(0,(len(listOfThings)-1),1)])
                 print("Inspired by %s" % listOfCompanies[random.randrange(0,(len(listOfCompanies)-1),1)])
                 print("That is %s" % listOfAdjectives[random.randrange(0,(len(listOfAdjectives)-1),1)])
