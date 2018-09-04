@@ -2,11 +2,11 @@
 
 **(1) Take user input:**
 
-thing
-Company name or phenomenon
-positive adjective
-process/technology
-technique
+- Things
+- Company names
+- Adjectives
+- Technologies
+- Techniques
 
 **(2) Output a story:**
 ```
