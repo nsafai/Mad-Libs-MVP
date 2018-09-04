@@ -9,7 +9,7 @@ process/technology
 technique
 
 **(2) Output a story:**
-
+```
 Build a [thing]
 
 Inspired by [Company name or phenomenon]
@@ -19,7 +19,7 @@ That is [positive adjective]
 Through [process/technology]
 
 Using [technique]
-
+```
 
 **(3) Test user input**
 
