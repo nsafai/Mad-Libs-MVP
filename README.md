@@ -13,10 +13,15 @@ technique
 (3) Output:
 
 Build a [thing]
+
 Inspired by [Company name or phenomenon]
+
 That is [positive adjective]
+
 Through [process/technology]
+
 Using [technique]
+
 
 (4) Test user input
 
