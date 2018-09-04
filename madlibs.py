@@ -1,9 +1,6 @@
-## Product Requirements
-
-# (1) Display story with blanks for input words
-#
 line = "\n_______________________________________________________________________________________________\n"
 instructionsNeeded = True
+userWantsNewStory = True
 
 listOfThings = list()
 listOfCompanies = list()
@@ -30,12 +27,32 @@ def user_input(prompt):
 running = True
 while running:
     activeList = lists[listIndex]
-    # print(listIndex)
 
     if (len(activeList)!=0) and (activeList[-1] == "done"):
-        if listIndex != numberOfLists:
+        # go to next list
+        if listIndex != (numberOfLists-1):
             instructionsNeeded = True
             listIndex = listIndex + 1
+
+        # user is done with lists, show story
+        else:
+            if userWantsNewStory == True:
+                print("Build a %s" % listOfThings[0])
+                print("Inspired by %s" % listOfCompanies[0])
+                print("That is %s" % listOfAdjectives[0])
+                print("Through %s" % listOfTechnologies[0])
+                print("Using %s" % listOfTechniques[0])
+                userWantsNewStory = False
+            if userWantsNewStory == False:
+                satisfied = input("\n\n Are you pleased with your story? Type (yes/no): ")
+                if satisfied == "yes":
+                    print("Goodbye!")
+                    running = False
+                elif satisfied == "no":
+                    print("Ok, here's another one:\n\n")
+                    userWantsNewStory == True
+
+    # (1) take input from user
 
     elif activeList == listOfThings:
         if instructionsNeeded == True:
@@ -73,20 +90,6 @@ while running:
         print("unexpected edge case")
 
 
-# (2) Inputs:
-# thing
-# Company name or phenomenon
-# positive adjective
-# process/technology
-# technique
-#
-# (3) Output:
-# Build a [thing]
-# Inspired by [Company name or phenomenon]
-# That is [positive adjective]
-# Through [process/technology]
-# Using [technique]
-#
 # (4) Test user input
 #
 #
