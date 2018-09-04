@@ -1,3 +1,4 @@
+import random
 line = "\n_______________________________________________________________________________________________\n"
 instructionsNeeded = True
 userWantsNewStory = True
@@ -28,6 +29,9 @@ running = True
 while running:
     activeList = lists[listIndex]
 
+
+
+
     if (len(activeList)!=0) and (activeList[-1] == "done"):
         # go to next list
         if listIndex != (numberOfLists-1):
@@ -37,11 +41,12 @@ while running:
         # user is done with lists, show story
         else:
             if userWantsNewStory == True:
-                print("Build a %s" % listOfThings[0])
-                print("Inspired by %s" % listOfCompanies[0])
-                print("That is %s" % listOfAdjectives[0])
-                print("Through %s" % listOfTechnologies[0])
-                print("Using %s" % listOfTechniques[0])
+                print("\n\n\n")
+                print("Build a %s" % listOfThings[random.randrange(0,(len(listOfThings)-1),1)])
+                print("Inspired by %s" % listOfCompanies[random.randrange(0,(len(listOfCompanies)-1),1)])
+                print("That is %s" % listOfAdjectives[random.randrange(0,(len(listOfAdjectives)-1),1)])
+                print("Through %s" % listOfTechnologies[random.randrange(0,(len(listOfTechnologies)-1),1)])
+                print("Using %s" % listOfTechniques[random.randrange(0,(len(listOfTechniques)-1),1)])
                 userWantsNewStory = False
             if userWantsNewStory == False:
                 satisfied = input("\n\n Are you pleased with your story? Type (yes/no): ")
@@ -50,38 +55,42 @@ while running:
                     running = False
                 elif satisfied == "no":
                     print("Ok, here's another one:\n\n")
-                    userWantsNewStory == True
+                    userWantsNewStory = True
 
     # (1) take input from user
 
     elif activeList == listOfThings:
         if instructionsNeeded == True:
-            user_input(line + "Name a thing and press enter. Then name another. When you're done naming things, type 'done'" + line)
+            user_input(line + "Name a THING and press enter. Then name another. When you're done naming things, type 'done'" + line)
             instructionsNeeded = False
         else:
             user_input('')
 
     elif activeList == listOfCompanies:
         if instructionsNeeded == True:
-            user_input(line + "Name a company and press enter. Then name another. When you're done naming companies, type 'done'" + line)
+            user_input(line + "Name a COMPANY / STORY and press enter. Then name another. When you're done naming companies, type 'done'" + line)
+            instructionsNeeded = False
         else:
             user_input('')
 
     elif activeList == listOfAdjectives:
         if instructionsNeeded == True:
-            user_input(line + "Name an adjective and press enter. Then name another. When you're done naming adjectives, type 'done'" + line)
+            user_input(line + "Name an ADJECTIVE and press enter. Then name another. When you're done naming adjectives, type 'done'" + line)
+            instructionsNeeded = False
         else:
             user_input('')
 
     elif activeList == listOfTechnologies:
         if instructionsNeeded == True:
-            user_input(line + "Name a technology and press enter. Then name another. When you're done naming technologies, type 'done'" + line)
+            user_input(line + "Name a TECHNOLOGY / PROCESS and press enter. Then name another. When you're done naming technologies, type 'done'" + line)
+            instructionsNeeded = False
         else:
             user_input('')
 
     elif activeList == listOfTechniques:
         if instructionsNeeded == True:
-            user_input(line + "Name a technique and press enter. Then name another. When you're done naming techniques, type 'done'" + line)
+            user_input(line + "Name a TECHNIQUE / INGREDIENT and press enter. Then name another. When you're done naming techniques, type 'done'" + line)
+            instructionsNeeded = False
         else:
             user_input('')
 
