@@ -1,8 +1,6 @@
 ## Product Requirements
 
-**(1) Display story with blanks for input words**
-
-**(2) Inputs:**
+**(1) Take user input:**
 
 thing
 Company name or phenomenon
@@ -10,7 +8,7 @@ positive adjective
 process/technology
 technique
 
-**(3) Output:**
+**(2) Output a story:**
 
 Build a [thing]
 
@@ -23,7 +21,7 @@ Through [process/technology]
 Using [technique]
 
 
-**(4) Test user input**
+**(3) Test user input**
 
 
 ## Code requirements
