@@ -26,23 +26,23 @@ Using [technique]
 
 ## Code requirements
 
-Variable assignment
+- Variable assignment
 
-Function definitions
+- Function definitions
 
-Core data types: strings, integers, floats
+- Core data types: strings, integers, floats
 
-Collection types: lists, tuples, dictionary
+- Collection types: lists, tuples, dictionary
 
 
 ## Stretch Goals
 
-Randomize the words of the same type (ie shuffle the 5 nouns)).
+- Randomize the words of the same type (ie shuffle the 5 nouns)).
 
-Use a dictionary to generate the words.
+- Use a dictionary to generate the words.
 
-Use a differnet data structure to store words.
+- Use a differnet data structure to store words.
 
-Build with TDD
+- Build with TDD
 
-Use the system module (for accessing command-line arguments)
+- Use the system module (for accessing command-line arguments)
