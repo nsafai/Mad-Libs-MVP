@@ -2,38 +2,75 @@
 
 # (1) Display story with blanks for input words
 #
+line = "\n_______________________________________________________________________________________________\n"
+instructionsNeeded = True
 
 listOfThings = list()
-numberOfThings = 0
+listOfCompanies = list()
+listOfAdjectives = list()
+listOfTechnologies = list()
+listOfTechniques = list()
+
+lists = [listOfThings, listOfCompanies, listOfAdjectives, listOfTechnologies, listOfTechniques]
+
+listIndex = 0
+
+numberOfLists = len(lists)
 
 def create(item):
-    listOfThings.append(item)
-    print(listOfThings)
-    print(numberOfThings)
-
+    activeList.append(item)
+    # print(', '.join(activeList))
 
 def user_input(prompt):
     # the input function will display a message in the terminal
     # and wait for user input.
     user_input = input(prompt)
-    print(prompt)
     create(user_input)
 
 running = True
 while running:
-    numberOfThings = numberOfThings + 1
+    activeList = lists[listIndex]
+    # print(listIndex)
 
-    if numberOfThings == 1:
-        user_input("Name a thing\n")
+    if (len(activeList)!=0) and (activeList[-1] == "done"):
+        if listIndex != numberOfLists:
+            instructionsNeeded = True
+            listIndex = listIndex + 1
 
-    elif listOfThings[len(listOfThings)-1] == "done":
-        running = False
+    elif activeList == listOfThings:
+        if instructionsNeeded == True:
+            user_input(line + "Name a thing and press enter. Then name another. When you're done naming things, type 'done'" + line)
+            instructionsNeeded = False
+        else:
+            user_input('')
+
+    elif activeList == listOfCompanies:
+        if instructionsNeeded == True:
+            user_input(line + "Name a company and press enter. Then name another. When you're done naming companies, type 'done'" + line)
+        else:
+            user_input('')
+
+    elif activeList == listOfAdjectives:
+        if instructionsNeeded == True:
+            user_input(line + "Name an adjective and press enter. Then name another. When you're done naming adjectives, type 'done'" + line)
+        else:
+            user_input('')
+
+    elif activeList == listOfTechnologies:
+        if instructionsNeeded == True:
+            user_input(line + "Name a technology and press enter. Then name another. When you're done naming technologies, type 'done'" + line)
+        else:
+            user_input('')
+
+    elif activeList == listOfTechniques:
+        if instructionsNeeded == True:
+            user_input(line + "Name a technique and press enter. Then name another. When you're done naming techniques, type 'done'" + line)
+        else:
+            user_input('')
 
     else:
-        user_input("Name another thing. When you're done naming things, type 'done'\n")
-
-
-
+        # catch all
+        print("unexpected edge case")
 
 
 # (2) Inputs:
