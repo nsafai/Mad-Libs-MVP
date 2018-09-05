@@ -15,15 +15,9 @@ numberOfLists = len(arrayOflists)
 listIndex = 0
 
 def create(item):
-    activeList.append(item)
+    if item != "":
+        activeList.append(item)
     # print(', '.join(activeList))
-
-def user_input(prompt):
-    # the input function will display a message in the terminal
-    # and wait for user input.
-
-    user_input = str(input(prompt))
-    create(user_input)
 
 running = True
 while running:
@@ -56,39 +50,39 @@ while running:
 
     # (1) take input from user
     elif activeList == listOfThings:
-        if instructionsNeeded == True:
-            user_input(line + "Name a THING and press enter. Then name another. When you're done naming things, type 'done'" + line)
+        if instructionsNeeded:
+            create(str(input(line + "Name a THING and press enter. Then name another. When you're done naming things, type 'done'" + line)))
             instructionsNeeded = False
         else:
-            user_input('')
+            create(input(''))
 
     elif activeList == listOfCompanies:
-        if instructionsNeeded == True:
-            user_input(line + "Name a COMPANY / STORY and press enter. Then name another. When you're done naming companies, type 'done'" + line)
+        if instructionsNeeded:
+            create(str(input(line + "Name a COMPANY / STORY and press enter. Then name another. When you're done naming companies, type 'done'" + line)))
             instructionsNeeded = False
         else:
-            user_input('')
+            create(input(''))
 
     elif activeList == listOfAdjectives:
-        if instructionsNeeded == True:
-            user_input(line + "Name an ADJECTIVE and press enter. Then name another. When you're done naming adjectives, type 'done'" + line)
+        if instructionsNeeded:
+            create(str(input(line + "Name an ADJECTIVE and press enter. Then name another. When you're done naming adjectives, type 'done'" + line)))
             instructionsNeeded = False
         else:
-            user_input('')
+            create(input(''))
 
     elif activeList == listOfTechnologies:
-        if instructionsNeeded == True:
-            user_input(line + "Name a TECHNOLOGY / PROCESS and press enter. Then name another. When you're done naming technologies, type 'done'" + line)
+        if instructionsNeeded:
+            create(str(input(line + "Name a TECHNOLOGY / PROCESS and press enter. Then name another. When you're done naming technologies, type 'done'" + line)))
             instructionsNeeded = False
         else:
-            user_input('')
+            create(input(''))
 
     elif activeList == listOfTechniques:
-        if instructionsNeeded == True:
-            user_input(line + "Name a TECHNIQUE / INGREDIENT and press enter. Then name another. When you're done naming techniques, type 'done'" + line)
+        if instructionsNeeded:
+            create(str(input(line + "Name a TECHNIQUE / INGREDIENT and press enter. Then name another. When you're done naming techniques, type 'done'" + line)))
             instructionsNeeded = False
         else:
-            user_input('')
+            create(input(''))
 
     else:
         # catch all
