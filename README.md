@@ -41,7 +41,7 @@ Using [technique]
 
 - Use a dictionary to generate the words.
 
-- Use a differnet data structure to store words.
+- Use a different data structure to store words.
 
 - Build with TDD
 

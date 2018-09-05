@@ -4,27 +4,29 @@ line = "\n______________________________________________________________________
 instructionsNeeded = True
 userWantsNewStory = True
 
-listOfThings = list()
+listOfProducts = list()
 listOfCompanies = list()
 listOfAdjectives = list()
 listOfTechnologies = list()
 listOfTechniques = list()
 
-arrayOflists = [listOfThings, listOfCompanies, listOfAdjectives, listOfTechnologies, listOfTechniques]
+arrayOflists = [listOProducts, listOfCompanies, listOfAdjectives, listOfTechnologies, listOfTechniques]
 numberOfLists = len(arrayOflists)
 listIndex = 0
 
 def create(item):
+    # if input is not empty
     if item != "":
+        # add input to list
         activeList.append(item)
-    # print(', '.join(activeList))
 
 running = True
 while running:
     activeList = arrayOflists[listIndex]
 
+    # if list is not empty and last item of list is not "done"
     if (len(activeList)!=0) and (activeList[-1] == "done"):
-        # go to next list
+        # if you're not on the last list
         if listIndex != (numberOfLists-1):
             instructionsNeeded = True
             listIndex = listIndex + 1
@@ -33,7 +35,8 @@ while running:
         else:
             if userWantsNewStory == True:
                 print("\n\nYour inspiration:\n")
-                print("Build a %s" % listOfThings[random.randrange(0,(len(listOfThings)-1),1)])
+                # random.randrange (startpoint, endpoint, increment-interval)
+                print("Build a %s" % listOfProducts[random.randrange(0,(len(listOfProducts)-1),1)])
                 print("Inspired by %s" % listOfCompanies[random.randrange(0,(len(listOfCompanies)-1),1)])
                 print("That is %s" % listOfAdjectives[random.randrange(0,(len(listOfAdjectives)-1),1)])
                 print("Through %s" % listOfTechnologies[random.randrange(0,(len(listOfTechnologies)-1),1)])
@@ -49,41 +52,41 @@ while running:
                     userWantsNewStory = True
 
     # (1) take input from user
-    elif activeList == listOfThings:
+    elif activeList == listOfProducts:
         if instructionsNeeded:
-            create(str(input(line + "Name a THING and press enter. Then name another. When you're done naming things, type 'done'" + line)))
+            create(str(input(line + "Name a TYPE OF PRODUCT and press enter. Then name another. When you're done, type 'done'" + line)))
             instructionsNeeded = False
         else:
             create(input(''))
 
     elif activeList == listOfCompanies:
         if instructionsNeeded:
-            create(str(input(line + "Name a COMPANY / STORY and press enter. Then name another. When you're done naming companies, type 'done'" + line)))
+            create(str(input(line + "Name a COMPANY / STORY and press enter. Then name another. When you're done, type 'done'" + line)))
             instructionsNeeded = False
         else:
             create(input(''))
 
     elif activeList == listOfAdjectives:
         if instructionsNeeded:
-            create(str(input(line + "Name an ADJECTIVE and press enter. Then name another. When you're done naming adjectives, type 'done'" + line)))
+            create(str(input(line + "Name an ADJECTIVE and press enter. Then name another. When you're done, type 'done'" + line)))
             instructionsNeeded = False
         else:
             create(input(''))
 
     elif activeList == listOfTechnologies:
         if instructionsNeeded:
-            create(str(input(line + "Name a TECHNOLOGY / PROCESS and press enter. Then name another. When you're done naming technologies, type 'done'" + line)))
+            create(str(input(line + "Name a TECHNOLOGY / PROCESS and press enter. Then name another. When you're done, type 'done'" + line)))
             instructionsNeeded = False
         else:
             create(input(''))
 
     elif activeList == listOfTechniques:
         if instructionsNeeded:
-            create(str(input(line + "Name a TECHNIQUE / INGREDIENT and press enter. Then name another. When you're done naming techniques, type 'done'" + line)))
+            create(str(input(line + "Name a TECHNIQUE / INGREDIENT and press enter. Then name another. When you're done, type 'done'" + line)))
             instructionsNeeded = False
         else:
             create(input(''))
 
     else:
         # catch all
-        print("unexpected edge case")
+        print("Something's wrong")
